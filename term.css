@@ -1,0 +1,37 @@
+.terms-section {
+       background: linear-gradient(rgba(0, 0, 0, 0.7), rgb(65 153 171 / 70%));
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.terms-card {
+     background: linear-gradient(to right, #d7d0d0, #e1d9d9);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #333333;
+}
+
+.terms-card h2 {
+    font-weight: 700;
+    color: #e05d00;
+    font-size: 32px;
+}
+
+.terms-card p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.terms-card strong {
+    color: #e05d00;
+}
+
+.terms-card a {
+    color: #e05d00;
+    text-decoration: underline;
+}
+
+.terms-card a:hover {
+    color: #ff7c33;
+}
