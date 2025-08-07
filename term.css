@@ -35,3 +35,92 @@
 .terms-card a:hover {
     color: #ff7c33;
 }
+
+
+
+
+/* Scroll wrapper hides overflow */
+.scroll-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Flex container scrolls left */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: scroll-loop 30s linear infinite;
+}
+
+/* Animation for infinite left scroll */
+@keyframes scroll-loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Card Styling */
+.scroll-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 230px;
+  height: 150px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Zoom on hover */
+.scroll-card:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay for text reveal */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  opacity: 0;
+  padding: 1rem;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Show overlay on hover */
+.scroll-card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* Text styles */
+.card-overlay h5 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-overlay p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-overlay a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Optional: pause animation on hover */
+.scroll-wrapper:hover .card-container {
+  animation-play-state: paused;
+}
+
+

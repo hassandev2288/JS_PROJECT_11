@@ -6,16 +6,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeMenuBtn = document.querySelector('.close-menu');
     const mobileMenu = document.getElementById('mobileMenu');
     const overlay = document.querySelector('.overlay');
+    const mnav = document.querySelector('.mnav');
     
     // Debugging checks
     if (!mobileMenuBtn) console.error('Mobile menu button not found - check HTML for .mobile-menu-btn');
     if (!mobileMenu) console.error('Mobile menu not found - check HTML for #mobileMenu');
+    if (!mnav) console.warn('.mnav element not found - header may not hide properly');
     
     // Toggle menu function
     function toggleMobileMenu() {
+        const isOpening = !mobileMenu.classList.contains('active');
+        
         mobileMenu.classList.toggle('active');
         overlay.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        document.body.style.overflow = isOpening ? 'hidden' : '';
+        
+        // Toggle .mnav visibility
+        if (mnav) {
+            mnav.style.display = isOpening ? 'none' : '';
+        }
     }
     
     // Event listeners for mobile menu
@@ -153,8 +162,24 @@ document.addEventListener('DOMContentLoaded', function() {
                     mobileMenu.classList.remove('active');
                     overlay.classList.remove('active');
                     document.body.style.overflow = '';
+                    
+                    // Show .mnav again when closing via anchor link
+                    if (mnav) {
+                        mnav.style.display = '';
+                    }
                 }
             }
         });
     });
 });
+
+function showmyproduct() {
+    // This returns a collection (array-like), so we need to loop through or access a specific item
+    let elements = document.getElementsByClassName("same");
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+
+    // Get element by ID — DO NOT use "#" in getElementById
+    document.getElementById("onep").style.display = "block";
+}
