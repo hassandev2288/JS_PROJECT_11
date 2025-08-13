@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // ======================
     // MOBILE MENU FUNCTIONALITY (Enhanced with Animation)
     // ======================
@@ -8,10 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.querySelector('.overlay');
     const mnav = document.querySelector('.mnav');
 
-    if (!mobileMenuBtn) console.error('Mobile menu button not found');
-    if (!mobileMenu) console.error('Mobile menu not found');
-
     function openMenu() {
+        if (!mobileMenu || !overlay) return;
         mobileMenu.classList.add('active');
         overlay.classList.add('active');
         document.body.classList.add('menu-open');
@@ -32,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function closeMenu() {
+        if (!mobileMenu || !overlay) return;
         mobileMenu.classList.remove('active');
         overlay.classList.remove('active');
         document.body.classList.remove('menu-open');
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
     if (overlay) overlay.addEventListener('click', closeMenu);
 
-    // Close menu on link click
     document.querySelectorAll('.mobile-nav a').forEach(link => {
         link.addEventListener('click', closeMenu);
     });
@@ -52,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // ======================
     const header = document.getElementById('header');
     if (header) {
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
     }
@@ -61,17 +59,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // PRODUCT FILTER FUNCTIONALITY
     // ======================
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
+    const productCards = document.querySelectorAll('.as-product-card');
 
     if (filterBtns.length && productCards.length) {
         filterBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 filterBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 const filter = this.getAttribute('data-filter');
 
                 productCards.forEach(card => {
-                    card.style.display =
+                    card.parentElement.style.display =
                         filter === 'all' || card.getAttribute('data-category') === filter
                             ? 'block'
                             : 'none';
@@ -99,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (addToCartBtns.length && cartCount) {
         addToCartBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 count++;
                 cartCount.textContent = count;
                 this.innerHTML = '<i class="fas fa-check"></i>';
@@ -131,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // SMOOTH SCROLLING
     // ======================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
@@ -144,8 +142,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeMenu();
             }
         });
+    });
+
+    // ======================
+    // MOBILE PRODUCT TAP BEHAVIOR (Fixed for .as-product-card)
+    // ======================
+    if (window.innerWidth <= 768) {
+        const productLinks = document.querySelectorAll('.as-product-card, .as-product-card a');
+        productLinks.forEach(link => {
+            let tappedOnce = false;
+
+            link.addEventListener('click', function (e) {
+                if (!tappedOnce) {
+                    e.preventDefault(); // Stop going to product page
+                    this.classList.add('show-info'); // Show hover-like effect
+                    tappedOnce = true;
+
+                    // Reset after 2 seconds if user doesn't click again
+                    setTimeout(() => {
+                        tappedOnce = false;
+                        this.classList.remove('show-info');
+                    }, 2000);
+                } else {
+                    // Second tap goes to link
+                    if (this.tagName.toLowerCase() === 'a') {
+                        window.location.href = this.href;
+                    } else {
+                        const anchor = this.querySelector('a');
+                        if (anchor) window.location.href = anchor.href;
+                    }
+                }
+            });
+        });
     }
-    );
 });
 
 // ======================
@@ -205,26 +234,8 @@ if (id && products[id]) {
       <a href="index.html#products" class="btn btn-warning mt-4">⬅ Back</a>
     `;
 }
-// ======================
-// MOBILE PRODUCT TAP BEHAVIOR
-// ======================
-if (window.innerWidth <= 768) {
-    const productLinks = document.querySelectorAll('.product-card a');
-    productLinks.forEach(link => {
-        let tappedOnce = false;
-        
-        link.addEventListener('click', function(e) {
-            if (!tappedOnce) {
-                e.preventDefault(); // Stop going to product page
-                this.parentElement.classList.add('show-info'); // Show hover-like effect
-                tappedOnce = true;
 
-                // Reset after 2 seconds if user doesn't click again
-                setTimeout(() => {
-                    tappedOnce = false;
-                    this.parentElement.classList.remove('show-info');
-                }, 2000);
-            }
-        });
-    });
-}
+
+window.addEventListener('scroll', function () {
+    document.querySelector('.mnav').classList.toggle('scrolled', window.scrollY > 50);
+});
