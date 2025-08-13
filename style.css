@@ -80,7 +80,7 @@ a {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
     position: relative;
     display: inline-block;
@@ -893,8 +893,9 @@ footer {
     margin: 50px 0;
 }
 
+
 .about-card {
-    background-color: var(--secondary);
+    background: linear-gradient(rgba(24, 44, 46, 0.7), rgba(0, 0, 0, 0.7));
     padding: 30px;
     border-radius: 10px;
     text-align: center;
@@ -935,7 +936,7 @@ footer {
 .contact-hours {
     margin-top: 40px;
     padding: 20px;
-    background-color: var(--secondary);
+   background: linear-gradient(rgba(24, 44, 46, 0.7), rgba(0, 0, 0, 0.7));
     border-radius: 10px;
 }
 
@@ -948,11 +949,16 @@ footer {
 .form-group textarea {
     width: 100%;
     padding: 12px 15px;
-    background-color: var(--secondary);
+   background: linear-gradient(rgba(24, 44, 46, 0.7), rgba(0, 0, 0, 0.7));
     border: 1px solid #444;
     border-radius: 4px;
     color: var(--text);
     font-family: 'Inter', sans-serif;
+}
+
+.form-group select{
+   color: white; 
+   background-color: linear-gradient(rgba(24, 44, 46, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 .form-group textarea {
