@@ -69,10 +69,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const filter = this.getAttribute('data-filter');
 
                 productCards.forEach(card => {
-                    card.parentElement.style.display =
-                        filter === 'all' || card.getAttribute('data-category') === filter
-                            ? 'block'
-                            : 'none';
+                   card.style.display =
+    filter === 'all' || card.getAttribute('data-category') === filter
+        ? ''
+        : 'none';
+
                 });
 
                 if (window.innerWidth < 768) {
@@ -238,4 +239,35 @@ if (id && products[id]) {
 
 window.addEventListener('scroll', function () {
     document.querySelector('.mnav').classList.toggle('scrolled', window.scrollY > 50);
+
+
+
+
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // ... (Keep existing code)
+
+    // Slider Functionality
+    const sliderCards = document.querySelectorAll('.slider-card');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        sliderCards.forEach(card => card.classList.remove('active'));
+        sliderCards[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % sliderCards.length;
+        showSlide(currentSlide);
+    }
+
+    // Auto-play slider every 5 seconds
+    setInterval(nextSlide, 4000);
+
+    // Initialize first slide
+    showSlide(currentSlide);
 });

@@ -36,12 +36,12 @@
                 <ul class="menue">
                     <li><a href="index.html">Home</a></li>
                     <li class="ourbrand-wrapper">
-                        <a href="Ourbrand.html">OUR BRAND</a>
-                        <ul class="ourbrand-dropdown">
+                        <a href="Ourbrand.html">TOP BRAND</a>
+                        <!-- <ul class="ourbrand-dropdown">
                             <li><a href="#">Emarati</a></li>
                             <li><a href="#">JAS</a></li>
                             <li><a href="#">Other</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
 
                     <li class="dropdown">
@@ -91,12 +91,12 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li class="ourbrand-wrapper">
-                <a href="Ourbrand.html">OUR BRAND</a>
-                <ul class="ourbrand-dropdown">
+                <a href="Ourbrand.html">TOP BRAND</a>
+                <!-- <ul class="ourbrand-dropdown">
                     <li><a href="#">Emarati</a></li>
                     <li><a href="#">JAS</a></li>
                     <li><a href="#">Other</a></li>
-                </ul>
+                </ul> -->
             </li>
             <li class="dropdown">
                 <a href="product.html">PRODUCTS <i class="fas fa-chevron-down"></i></a>
@@ -136,12 +136,105 @@
 <!--   neww added  -->
 
 
-   <section class="page-hero">
-        <div class="container">
+   <section class="page-hero" style="height:35vh; min-height: 90px; margin-top:70px;" >
+        <div class="container"     >
             <h1>Our Products</h1>
             <p>Quality materials for every construction need</p>
         </div>
     </section>
+
+
+    <section class="py-5">
+        <div class="container-fluid">
+            <div class="scroll-wrapper">
+                <div class="card-container">
+
+                    <!-- Original Cards -->
+                    <div class="scroll-card" style="
+  background:
+    url('Home_IMAGES/Home_p1.png'),
+    linear-gradient(rgba(24, 44, 46, 0.7), rgba(0, 0, 0, 0.7));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; padding: 10px;
+">
+                        <div class="card-overlay">
+                            <h5>Consumer Electronics</h5>
+                            <p>Expert guidance and support navigating tech with ease.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-card" style="background-image: url('Product_images/antique.jpg');">
+                        <div class="card-overlay">
+                            <h5>Food and Beverage</h5>
+                            <p>Delightful customer service experiences for every taste.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-card" >
+                        <div class="card-overlay"   style="  background:
+    url('Home_p1.png');
+    linear-gradient:(rgba(24, 44, 46, 0.7), rgba(0, 0, 0, 0.7));
+  background-repeat: no-repeat; 
+  background-size: auto;
+">
+                            <h5>Fundraising</h5>
+                            <p>Empathetic strategies that drive engagement.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-card" style="background-image: url('Home_IMAGES/Home_p1.png');">
+                        <div class="card-overlay">
+                            <h5>Logistics</h5>
+                            <p>Streamlined communication and support.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate Cards for Infinite Loop -->
+                    <div class="scroll-card" style="background-image: url('p1.jpg');">
+                        <div class="card-overlay">
+                            <h5>Consumer Electronics</h5>
+                            <p>Expert guidance and support navigating tech with ease.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-card" style="background-image: url('Product_images/antique.jpg');">
+                        <div class="card-overlay">
+                            <h5>Food and Beverage</h5>
+                            <p>Delightful customer service experiences for every taste.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-card" style="background-image: url('p1.jpg');">
+                        <div class="card-overlay">
+                            <h5>Fundraising</h5>
+                            <p>Empathetic strategies that drive engagement.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                    <div class="scroll-card" style="background-image: url('Product_images/diamond.jpg');">
+                        <div class="card-overlay">
+                            <h5>Logistics</h5>
+                            <p>Streamlined communication and support.</p>
+                            <a href="#">Learn more →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
 
     <!-- Products Main Section -->
     <section class="products-main">
@@ -153,13 +246,13 @@
                     <button class="filter-btn" data-filter="cement">Cement</button>
                     <button class="filter-btn" data-filter="steel">Steel</button>
                     <button class="filter-btn" data-filter="bricks">Bricks</button>
-                    <button class="filter-btn" data-filter="aggregates">Aggregates</button>
+                    <button class="filter-btn" data-filter="adhesives">Aggregates</button>
                 </div>
             </div>
             
             <div class="products-grid">
                 <!-- Product 1 -->
-                <div class="product-card" data-category="cement">
+                <div class="product-card as-product-card" data-category="cement">
                     <div class="product-img">
                         <img src="Product_images/antique.jpg" alt="Portland Cement">
                     </div>
@@ -249,7 +342,7 @@
         
         <div class="products-grid">
             <!-- Product 1 - Emarrati Brand -->
-            <div class="product-card" data-category="adhesives">
+            <div class="product-card" data-category="adhesives" data-category="steel">
                 <div class="product-badge">Emirati Brand</div>
                 <div class="product-img">
                     <img src="Product_images/diamond.jpg" alt="Emarrati Mastic"  >
@@ -341,83 +434,6 @@
 
 
 
-
-
-    <section class="py-5 bg-light">
-        <div class="container-fluid">
-            <div class="scroll-wrapper">
-                <div class="card-container">
-
-                    <!-- Original Cards -->
-                    <div class="scroll-card" style="background-image: url('p1.jpg');">
-                        <div class="card-overlay">
-                            <h5>Consumer Electronics</h5>
-                            <p>Expert guidance and support navigating tech with ease.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <div class="scroll-card" style="background-image: url('Product_images/antique.jpg');">
-                        <div class="card-overlay">
-                            <h5>Food and Beverage</h5>
-                            <p>Delightful customer service experiences for every taste.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <div class="scroll-card" style="background-image: url('p1.jpg');">
-                        <div class="card-overlay">
-                            <h5>Fundraising</h5>
-                            <p>Empathetic strategies that drive engagement.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <div class="scroll-card" style="background-image: url('Product_images/diamond.jpg');">
-                        <div class="card-overlay">
-                            <h5>Logistics</h5>
-                            <p>Streamlined communication and support.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <!-- Duplicate Cards for Infinite Loop -->
-                    <div class="scroll-card" style="background-image: url('p1.jpg');">
-                        <div class="card-overlay">
-                            <h5>Consumer Electronics</h5>
-                            <p>Expert guidance and support navigating tech with ease.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <div class="scroll-card" style="background-image: url('Product_images/antique.jpg');">
-                        <div class="card-overlay">
-                            <h5>Food and Beverage</h5>
-                            <p>Delightful customer service experiences for every taste.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <div class="scroll-card" style="background-image: url('p1.jpg');">
-                        <div class="card-overlay">
-                            <h5>Fundraising</h5>
-                            <p>Empathetic strategies that drive engagement.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <div class="scroll-card" style="background-image: url('Product_images/diamond.jpg');">
-                        <div class="card-overlay">
-                            <h5>Logistics</h5>
-                            <p>Streamlined communication and support.</p>
-                            <a href="#">Learn more →</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 

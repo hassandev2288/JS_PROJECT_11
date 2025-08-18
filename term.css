@@ -119,6 +119,7 @@ color: #fff;
 
 /* Card Styling */
 .scroll-card {
+  
   position: relative;
   flex: 0 0 auto;
   width: 230px;
@@ -129,8 +130,9 @@ color: #fff;
   overflow: hidden;
   transition: transform 0.3s ease;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
 
+}
+      
 /* Zoom on hover */
 .scroll-card:hover {
   transform: scale(1.05);
@@ -151,7 +153,10 @@ color: #fff;
   text-align: center;
 }
 
+
+
 /* Show overlay on hover */
+
 .scroll-card:hover .card-overlay {
   opacity: 1;
 }
@@ -177,29 +182,40 @@ color: #fff;
   animation-play-state: paused;
 }
 
-
-
-
-
-.brand-logos {
-    text-align: center;
-    padding: 30px 0px;
-  
+/* Brand Section Styling */
+#brand-showcase {
+  padding: 60px 20px;
+  text-align: center;
+  background: none; /* no background */
 }
 
-.logo-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* Space between logos */
-    flex-wrap: wrap;
+#brand-showcase .brand-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #222;
 }
 
-.brand-logo {
-    max-height: 120px;
-    width: auto;
-    transition: transform 0.3s ease;
+#brand-showcase .brand-container {
+  max-width: 1200px;
+  margin: auto;
 }
 
-.brand-logo:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+#brand-showcase .brand-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Increased from 200px to 250px */
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+#brand-showcase .brand-logos img {
+  max-width: 180px; /* Increased from 120px to 180px */
+  height: auto; /* Maintains aspect ratio */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#brand-showcase .brand-logos img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
