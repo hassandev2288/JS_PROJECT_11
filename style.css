@@ -949,6 +949,14 @@ footer {
     margin: 50px 0;
 }
 
+.contact-container .contact-info{
+    order: 2;  /* moves left div to the right */
+}
+
+.contact-container .contact-form {
+    order: 1; 
+}
+
 .contact-item {
     display: flex;
     gap: 20px;
