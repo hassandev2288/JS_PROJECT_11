@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (header) {
         window.addEventListener('scroll', function () {
             header.classList.toggle('scrolled', window.scrollY > 50);
+            if (mnav) mnav.classList.toggle('scrolled', window.scrollY > 50);
         });
     }
 
@@ -59,25 +60,43 @@ document.addEventListener('DOMContentLoaded', function () {
     // PRODUCT FILTER FUNCTIONALITY
     // ======================
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.as-product-card');
+    const productItems = document.querySelectorAll('.product-item');
 
-    if (filterBtns.length && productCards.length) {
+    console.log('Found filter buttons:', filterBtns.length);
+    console.log('Found product items:', productItems.length);
+
+    if (filterBtns.length && productItems.length) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', function () {
+                console.log('Filter button clicked:', this.getAttribute('data-filter'));
                 filterBtns.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
+
                 const filter = this.getAttribute('data-filter');
 
-                productCards.forEach(card => {
-                   card.style.display =
-    filter === 'all' || card.getAttribute('data-category') === filter
-        ? ''
-        : 'none';
-
+                productItems.forEach(item => {
+                    item.style.display = 'none';
                 });
 
+                if (filter === 'all') {
+                    console.log('Showing all products');
+                    productItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                } else {
+                    const filteredItems = Array.from(productItems).filter(item => 
+                        item.getAttribute('data-category') === filter
+                    );
+                    console.log(`Showing ${filteredItems.length} items for filter: ${filter}`);
+                    filteredItems.forEach((item, index) => {
+                        if (index < 5) {
+                            item.style.display = 'block';
+                        }
+                    });
+                }
+
                 if (window.innerWidth < 768) {
-                    const productsGrid = document.querySelector('.products-grid');
+                    const productsGrid = document.querySelector('#productContainer');
                     if (productsGrid) {
                         window.scrollTo({
                             top: productsGrid.offsetTop - 20,
@@ -87,6 +106,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         });
+
+        console.log('Initializing: Showing all products');
+        productItems.forEach(item => {
+            item.style.display = 'block';
+        });
+    } else {
+        console.error('Filter buttons or product items not found');
     }
 
     // ======================
@@ -146,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ======================
-    // MOBILE PRODUCT TAP BEHAVIOR (Fixed for .as-product-card)
+    // MOBILE PRODUCT TAP BEHAVIOR
     // ======================
     if (window.innerWidth <= 768) {
         const productLinks = document.querySelectorAll('.as-product-card, .as-product-card a');
@@ -155,17 +181,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             link.addEventListener('click', function (e) {
                 if (!tappedOnce) {
-                    e.preventDefault(); // Stop going to product page
-                    this.classList.add('show-info'); // Show hover-like effect
+                    e.preventDefault();
+                    this.classList.add('show-info');
                     tappedOnce = true;
 
-                    // Reset after 2 seconds if user doesn't click again
                     setTimeout(() => {
                         tappedOnce = false;
                         this.classList.remove('show-info');
                     }, 2000);
                 } else {
-                    // Second tap goes to link
                     if (this.tagName.toLowerCase() === 'a') {
                         window.location.href = this.href;
                     } else {
@@ -176,98 +200,143 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
-});
 
-// ======================
-// PRODUCT DETAILS FUNCTIONALITY
-// ======================
-function showmyproduct() {
-    let elements = document.getElementsByClassName("same");
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].style.display = "none";
+    // ======================
+    // PRODUCT DETAILS FUNCTIONALITY
+    // ======================
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+    console.log('Product ID from URL:', id);
+
+    const products = {
+
+ '17-HEAVY-DUTY': {
+            name: '17” DISCOLUX POLISHING PAD',
+            image: 'Abrasives_IMAGES/17-HEAVY-DUTY.png',
+            description: 'Achieve a flawless shine with the 17” Discolux Polishing Pad.Designed for smooth, streak-free finishing on all surfaces.Durable, efficient, and perfect for professional polishing results'
+ ,
+            price: 'PKR 9500'
+        },
+        'cleaner': {
+            name: '17” DISCOLUX POLISHING PAD',
+            image: 'Product_images/cleaner.jpg',
+            description: 'home page ka produxtc ha Premium polishing pad for marble and granite.',
+            price: 'PKR 950'
+        },
+        'glue': {
+            name: 'Marble Glue Fast Dry',
+            image: 'Product_images/Anti_slip.jpg',
+            description: 'Fast-drying marble glue for stone fixing.',
+            price: 'PKR 580'
+        },
+        'cutter': {
+            name: 'Professional Cutting Disc',
+            image: 'Product_images/cutter.jpg',
+            description: 'Durable cutting disc for all tile types.',
+            price: 'PKR 750'
+        },
+        'tape': {
+            name: 'Double-Sided Tape',
+            image: 'Product_images/tape.jpg',
+            description: 'Strong adhesive double-sided tape.',
+            price: 'PKR 320'
+        }
+    };
+
+    const whatsappLink = document.getElementById('whatsapp-link');
+    const instagramLink = document.getElementById('instagram-link');
+    const gmailLink = document.getElementById('gmail-link');
+    const productDetail = document.getElementById('product-detail');
+
+    console.log('WhatsApp link element:', whatsappLink);
+    console.log('Instagram link element:', instagramLink);
+    console.log('Gmail link element:', gmailLink);
+    console.log('Product detail element:', productDetail);
+
+    if (id && products[id]) {
+        const p = products[id];
+        console.log('Product found:', p);
+
+        // Update product details
+        document.getElementById('product-image').src = p.image;
+        document.getElementById('product-image').alt = p.name;
+        document.getElementById('product-name').textContent = p.name;
+        document.getElementById('product-description').textContent = p.description;
+        document.getElementById('product-price').textContent = p.price;
+
+        // Construct the message for sharing
+        const msg = `Hi, I want to order ${p.name}\nHere is the product: https://jesralseyouh.com/${p.image}`;
+
+        // Set WhatsApp link
+        if (whatsappLink) {
+            whatsappLink.href = `https://wa.me/+923042862288?text=${encodeURIComponent(msg)}`;
+            whatsappLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('WhatsApp link clicked:', whatsappLink.href);
+                alert('Opening WhatsApp with order details: ' + p.name);
+                window.location.href = whatsappLink.href; // Force redirect
+            });
+        } else {
+            console.error('WhatsApp link element not found');
+        }
+
+        // Set Instagram link
+        if (instagramLink) {
+            instagramLink.href = 'https://www.instagram.com/jesralseyouh/';
+            instagramLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Instagram link clicked:', instagramLink.href);
+                alert('Please send us a DM on Instagram with your order details: ' + p.name);
+                window.location.href = instagramLink.href; // Force redirect
+            });
+        } else {
+            console.error('Instagram link element not found');
+        }
+
+        // Set Gmail link
+        if (gmailLink) {
+            gmailLink.href = `mailto:hassanyaseen6476@gmail.com?subject=Order for ${encodeURIComponent(p.name)}&body=${encodeURIComponent(msg)}`;
+            gmailLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Gmail link clicked:', gmailLink.href);
+                alert('Opening email client with order details: ' + p.name);
+                window.location.href = gmailLink.href; // Force redirect
+                // Fallback for devices without email client
+                setTimeout(() => {
+                    alert('If your email client did not open, please email hassanyaseen6476@gmail.com with your order details: ' + p.name);
+                }, 1000);
+            });
+        } else {
+            console.error('Gmail link element not found');
+        }
+    } else if (productDetail) {
+        console.error('Product not found for ID:', id);
+        productDetail.innerHTML = `
+            <h2>Product not found</h2>
+            <a href="index.html#products" class="btn btn-warning mt-4">⬅ Back</a>
+        `;
+    } else {
+        console.error('Product detail element not found');
     }
-    document.getElementById("onep").style.display = "block";
-}
 
-const products = {
-    'cleaner': {
-        name: '17” DISCOLUX POLISHING PAD',
-        image: 'Product_images/cleaner.jpg',
-        description: 'Premium polishing pad for marble and granite.',
-        price: 'PKR 950'
-    },
-    'glue': {
-        name: 'Marble Glue Fast Dry',
-        image: 'Product_images/Anti_slip.jpg',
-        description: 'Fast-drying marble glue for stone fixing.',
-        price: 'PKR 580'
-    },
-    'cutter': {
-        name: 'Professional Cutting Disc',
-        image: 'Product_images/cutter.jpg',
-        description: 'Durable cutting disc for all tile types.',
-        price: 'PKR 750'
-    },
-    'tape': {
-        name: 'Double-Sided Tape',
-        image: 'Product_images/tape.jpg',
-        description: 'Strong adhesive double-sided tape.',
-        price: 'PKR 320'
-    }
-};
-
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-
-if (id && products[id]) {
-    const p = products[id];
-    document.getElementById('product-image').src = p.image;
-    document.getElementById('product-image').alt = p.name;
-    document.getElementById('product-name').textContent = p.name;
-    document.getElementById('product-description').textContent = p.description;
-    document.getElementById('product-price').textContent = p.price;
-
-    const msg = `Hi, I want to order ${p.name}\nHere is the product: https://yourwebsite.com/${p.image}`;
-    document.getElementById('whatsapp-link').href = `https://wa.me/923211766422?text=${encodeURIComponent(msg)}`;
-} else if (document.getElementById('product-detail')) {
-    document.getElementById('product-detail').innerHTML = `
-      <h2>Product not found</h2>
-      <a href="index.html#products" class="btn btn-warning mt-4">⬅ Back</a>
-    `;
-}
-
-
-window.addEventListener('scroll', function () {
-    document.querySelector('.mnav').classList.toggle('scrolled', window.scrollY > 50);
-
-
-
-
-});
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    // ... (Keep existing code)
-
-    // Slider Functionality
+    // ======================
+    // SLIDER FUNCTIONALITY
+    // ======================
     const sliderCards = document.querySelectorAll('.slider-card');
-    let currentSlide = 0;
+    if (sliderCards.length) {
+        let currentSlide = 0;
 
-    function showSlide(index) {
-        sliderCards.forEach(card => card.classList.remove('active'));
-        sliderCards[index].classList.add('active');
-    }
+        function showSlide(index) {
+            sliderCards.forEach(card => card.classList.remove('active'));
+            sliderCards[index].classList.add('active');
+        }
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % sliderCards.length;
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % sliderCards.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 4000);
         showSlide(currentSlide);
     }
-
-    // Auto-play slider every 5 seconds
-    setInterval(nextSlide, 4000);
-
-    // Initialize first slide
-    showSlide(currentSlide);
 });
