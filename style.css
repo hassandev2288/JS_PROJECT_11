@@ -1718,3 +1718,37 @@ backdrop-filter: blur(8.2px);
 ol, ul {
      padding-left: 0 !important ;
 }
+
+/* @media (max-width: 1024px) {
+  .nav ul li a {
+    padding: 0px 4px !important;
+  }
+} */
+
+
+/* NEW  FRON CHAT GPT  */
+
+@media (max-width: 425px) {
+.mnav{
+    padding: 0px 10px;
+}
+    .brand-short{
+        display: none;
+    }
+.cheading h1 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+   
+}
+.clogo{
+ height: 100px;
+    width: 100px;
+}
+.clogo .brand_logo{
+    height: 100px;
+    width: 100px;
+    
+}
+}
+
