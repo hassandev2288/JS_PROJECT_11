@@ -1751,7 +1751,7 @@ ol, ul {
     
 }
 .slider-container{
- 
+ height: 80vh;
 }
 .hero-content{
         padding-bottom: 149px;
