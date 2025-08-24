@@ -1751,10 +1751,15 @@ ol, ul {
     
 }
 .slider-container{
-    height: 90vh;
+ 
 }
 .hero-content{
         padding-bottom: 149px;
+}
+.p_section_mobile {
+    padding-top: 9rem !important;
+    padding-bottom: 3rem !important;
+
 }
 }
 
