@@ -1750,5 +1750,11 @@ ol, ul {
     width: 100px;
     
 }
+.slider-container{
+    height: 90vh;
+}
+.hero-content{
+        padding-bottom: 149px;
+}
 }
 
