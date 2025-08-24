@@ -377,7 +377,7 @@ transform: translateY(-2px);
 .mobile-nav li a {
     font-size: 1.1rem;
     font-weight: 500;
-    padding: 10px;
+    padding: 5px 10px;
     display: block;
     border-radius: 6px;
     transition: background 0.3s ease, transform 0.2s ease;
@@ -1260,8 +1260,8 @@ footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 30px;
-        padding-bottom: 20px;
+       
+        padding-bottom: 15px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -1806,7 +1806,7 @@ social-links a {
    
           width: 100%;
         padding: 8px;
-        background: #0f1414;
+     background: linear-gradient(rgb(21 57 63 / 90%), rgb(0 0 0));
         color: #ffffff;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -1814,7 +1814,11 @@ social-links a {
         max-height: 200px;
         overflow-y: auto;
         margin: 10px;
-        padding: 0 10px;
+        padding: 3px 10px;
+}
+#product-search  option{
+ background-color: #010404;
+    color: white;
 }
 header-container {
   flex-direction: column; /* Stack items vertically on mobile */
@@ -1825,6 +1829,9 @@ header-container {
   display: flex;
   justify-content: center;
   margin-bottom: 10px; /* Space before search */
+}
+.product-search option{
+   
 }
 }
 
