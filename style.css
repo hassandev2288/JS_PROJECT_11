@@ -1751,15 +1751,46 @@ ol, ul {
     
 }
 .slider-container{
- height: 80vh;
+
 }
 .hero-content{
         padding-bottom: 149px;
 }
 .p_section_mobile {
-    padding-top: 9rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 3.5rem !important;
+    padding-bottom: 2rem !important;
 
+}
+.info_footer {
+    grid-template-columns: 1fr !important;
+    gap: 50px !important;
+}
+.footer-section {
+    padding-bottom: 30px !important;
+    padding-top: 13px !important;
+    padding-left: 30px !important;
+    padding-right: 26px !important;
+}
+.hrl{
+    
+    margin: 0px  15px !important;
+}
+
+.bfooter {
+    grid-template-columns: 1fr !important;
+}
+ .bfooter .footer-col:nth-child(1) { order: 4; } /* JESR Al SEYOUH goes last */
+  .bfooter .footer-col:nth-child(2) { order: 1; } /* Quick Links second last */
+  .bfooter .footer-col:nth-child(3) { order: 2; } /* Products second */
+  .bfooter .footer-col:nth-child(4) { order: 3; } /* Contact Us first */
+
+  .social-links {
+    padding-bottom: 10px !important;
+}
+
+social-links a {
+  
+    background-color: #222;
 }
 }
 
