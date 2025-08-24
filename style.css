@@ -1724,7 +1724,9 @@ ol, ul {
     padding: 0px 4px !important;
   }
 } */
-
+.mobile-search{
+    display: none;
+}
 
 /* NEW  FRON CHAT GPT  */
 
@@ -1732,9 +1734,9 @@ ol, ul {
 .mnav{
     padding: 0px 10px;
 }
-    .brand-short{
-        display: none;
-    }
+.brand-short {
+    display: none !important; /* Ensure this works */
+  }
 .cheading h1 {
     font-family: 'Poppins', sans-serif !important;
     font-size: 22px !important;
@@ -1792,5 +1794,38 @@ social-links a {
   
     background-color: #222;
 }
+.cart-icon{
+    display: none;
 }
+.mobile-search{
+    display: block;
+    display: contents !important;
+}
+
+#product-search {
+   
+          width: 100%;
+        padding: 8px;
+        background: #0f1414;
+        color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        max-height: 200px;
+        overflow-y: auto;
+        margin: 10px;
+        padding: 0 10px;
+}
+header-container {
+  flex-direction: column; /* Stack items vertically on mobile */
+  align-items: stretch; /* Stretch items to full width */
+}
+
+.social-links { /* If social icons are in this div, adjust layout */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* Space before search */
+}
+}
+
 
