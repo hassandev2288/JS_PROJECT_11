@@ -959,8 +959,8 @@ footer {
 
 .contact-item {
     display: flex;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 8px;
+    /* margin-bottom: 30px; */
     align-items: flex-start;
 }
 
@@ -1261,7 +1261,7 @@ footer {
         justify-content: space-between;
         align-items: center;
        
-        padding-bottom: 15px;
+        padding-bottom: 30px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -1835,6 +1835,9 @@ header-container {
 }
 }
 
+.contact-text h3{
+    margin-bottom: 0 !important;
 
+}
 
 
