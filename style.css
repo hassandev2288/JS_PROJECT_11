@@ -1275,7 +1275,7 @@ footer {
 
     .mobile-menu-header {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
        
        
@@ -1879,8 +1879,8 @@ header-container {
         padding-bottom: 20px;
     }
     .clogo{
-   height: 60px;
-   width: 60px;
+   height: 80px;
+   width: 62px;
     }
     .clogo .brand_logo{
         height: 100%;
@@ -1891,12 +1891,15 @@ header-container {
         font-size: 21px;
         font-family: system-ui;
         text-shadow: 0 0 5px #e05d00 !important;
+        padding-top: 10px;
+       
     }
      
     
         .close-menu{
             padding-bottom: 50px;
-            padding-left: 12px;
+           
+         
         }
         .contact-icon{
             text-shadow: 0 0 5px #e05d00 !important;
