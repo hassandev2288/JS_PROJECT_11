@@ -35,9 +35,6 @@
             </div>
         </nav>
     </section>
-
-
-
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
@@ -45,15 +42,7 @@
             <nav class="desktop-na">
                 <ul class="menue">
                     <li><a href="index.html">Home</a></li>
-                    <li class="ourbrand-wrapper">
-                        <a href="Ourbrand.html">TOP BRAND</a>
-                        <!-- <ul class="ourbrand-dropdown">
-                            <li><a href="#">Emarati</a></li>
-                            <li><a href="#">JAS</a></li>
-                            <li><a href="#">Other</a></li>
-                        </ul> -->
-                    </li>
-
+                    <li><a href="Ourbrand.html">TOP BRAND</a></li>
                     <li class="dropdown">
                         <a href="product.html">PRODUCTS <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -71,7 +60,6 @@
                         </ul>
                     </li>
                     <li><a href="about.html">About</a></li>
-
                     <li><a href="Term.html">Terms & Conditions</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -81,14 +69,13 @@
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <!-- <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span> -->
             </div>
             <div class="mobile-search">
-                <select id="product-search">
+                <select id="product-search" onchange="redirectToPage()">
                     <option value="">Select Product Category</option>
-                    <option value=" " class="filter-btn" data-filter="adhesives"><a href="Abrasives.html">Abrasives</a></option>
-                    <option value="./">Adhesives & Glue</option>
+                    <option value="./Abrasives.html">Abrasives</option>
+                    <option value="./Adhesives.html">Adhesives & Glue</option>
+                    <option value="./Antique.html">Antique & Oxidize Finish</option>
                     <!-- ... other options ... -->
                 </select>
 
@@ -107,31 +94,9 @@
         </div>
         <nav class="mobile-nav">
             <li><a href="index.html">Home</a></li>
+            <li><a href="Ourbrand.html">TOP BRAND</a></li>
+            <li><a href="product.html">Product</a></li>
             <li><a href="about.html">About</a></li>
-            <li class="ourbrand-wrapper">
-                <a href="Ourbrand.html">Top BRAND</a>
-                <!-- <ul class="ourbrand-dropdown">
-                    <li><a href="#">Emarati</a></li>
-                    <li><a href="#">JAS</a></li>
-                    <li><a href="#">Other</a></li>
-                </ul> -->
-            </li>
-            <li class="dropdown">
-                <a href="product.html">PRODUCTS <i class="fas fa-chevron-down"></i></a>
-                <ul class="dropdown-menu">
-                    <li><a href="./Abrasives.html">Abrasives</a></li>
-                    <li><a href="./Adhesives.html">Adhesives & Glue</a></li>
-                    <li><a href="./Antique.html">Antique & Oxidize Finish</a></li>
-                    <li><a href="./Cleaning.html">Cleaning Liquid & Powder</a></li>
-                    <li><a href="./color.html">Color Pigment</a></li>
-                    <li><a href="./Concrete.html">Concrete & Epoxy</a></li>
-                    <li><a href="./Diamond.html">Diamond & Resin Bonded</a></li>
-                    <li><a href="./Dry.html">Dry-Fix & Fixtures</a></li>
-                    <li><a href="./Machinery.html">Machinery & Tools</a></li>
-                    <!-- <li><a href="#">Pads & Brushes</a></li> -->
-                    <!-- <li><a href="#">Polishing Liquid & Gel</a></li> -->
-                </ul>
-            </li>
             <li><a href="Term.html">Terms & Conditions</a></li>
             <li><a href="contact.html">Contact</a></li>
             </ul>

@@ -341,6 +341,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+function redirectToPage() {
+    var select = document.getElementById("product-search");
+    var url = select.value;
+    if (url) {
+        window.location.href = url; // Redirect to the selected page
+    }
+}
+
+
+
 
 
 
