@@ -327,7 +327,7 @@ transform: translateY(-2px);
     top: 0;
     right: -100%;
     width: 80%;
-    max-width: 300px;
+    max-width: 210px;
     height: 100vh;
     background: linear-gradient(180deg, #0c606b, #000); /* Gradient preserved */
     color: white;
@@ -1209,7 +1209,7 @@ footer {
 
     .mobile-menu {
         width: 85%;
-        max-width: 300px;
+        /* max-width: 300px; */
     }
 
     .section-title {
@@ -1224,6 +1224,7 @@ footer {
     .testimonial-card {
         padding: 20px;
     }
+ 
 }
 
 /* Mobile Menu Styles */
@@ -1249,7 +1250,7 @@ footer {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 400px !important;
+        width: 280px !important;
         height: 100vh;
         background-color: var(--secondary);
         z-index: 1000;
@@ -1259,7 +1260,7 @@ footer {
         padding-left: 15px;
         padding-right: 5px;
         overflow-y: auto;
-         max-width: 400px !important;
+         max-width: 280px !important;
     }
 
     .mobile-menu.active {
