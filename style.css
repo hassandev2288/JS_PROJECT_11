@@ -1081,13 +1081,13 @@ footer {
 @media (max-width: 420px) {
 
 body {
-    background-image: url("Body_IMAGE_com.png")  !important;
-      background-repeat: no-repeat;
-    background-size: cover;   /* Or contain, depending on fit */
+   background-image: url("Body_IMAGE_com.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-
- overflow-x: hidden;
+    background-attachment: scroll; /* ✅ changed from fixed to scroll */
+    min-height: 100vh; /* ensures full height */
+    overflow-x: hidden;
 }
 }
 /* Responsive Styles */
