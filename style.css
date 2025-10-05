@@ -17,7 +17,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap');
 
 body {
-    background-image: url("Body_IMAGE.png") !important;
+    background-image: url("Body_IMAGE.png") ;
     background-repeat: no-repeat;
     background-size: cover;   /* Or contain, depending on fit */
     background-position: center;
@@ -1077,6 +1077,13 @@ footer {
     opacity: 1;
 }
 
+
+@media (max-width: 420px) {
+
+body {
+    background-image: url("Body_IMAGE_com.png")  !important;
+}
+}
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .hero h1 {
@@ -1114,6 +1121,10 @@ footer {
 }
           
 @media (max-width: 768px) {
+
+    body {
+    background-image: url("Body_IMAGE_com.png") ;
+    }
     .desktop-nav {
         display: none;
     }
@@ -1175,10 +1186,17 @@ footer {
     .page-hero h1 {
         font-size: 2rem;
     }
+    /* .info_footer {
+     grid-template-columns: 545px 100px !important;
+   } */
 }
 
 
 @media (max-width: 576px) {
+
+     body {
+    background-image: url("Body_IMAGE_com.png") !important ;
+    }
 
     /* .menue{
         display: none;
@@ -1213,7 +1231,7 @@ footer {
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
 
     .section-title::after {
@@ -1498,6 +1516,8 @@ header-container {
     .cart-icon{
     display: none;
 }
+
+
 }
 
 @media (max-width: 480px) {
@@ -1526,8 +1546,19 @@ header-container {
         overflow-y: auto;
         max-width: 400px !important;
     }
+    .info_footer{
+     grid-template-columns: 421px 250px !important;
+}
+.bfooter{
+     grid-template-columns: 1fr 1fr   !important;
+}
+body {
+        padding-bottom: 0px; 
+    background-image: url("Body_IMAGE_com.png")  !important;
+    }
 
 }
+
 
 .footer-section {
    /* background: linear-gradient(rgb(65 153 171 / 70%), rgba(0, 0, 0, 0.7)); */
@@ -1542,11 +1573,16 @@ header-container {
     /* grid-template-columns: 1fr 1fr 2fr; */
     gap: 40px;
 }
-.info_footer{
-     grid-template-columns:  170px 250px 680px  !important;
-}
+
+
+.footer-container .footer-col:nth-child(1) { order: 3; } /* JESR Al SEYOUH goes last */
+ .footer-container .footer-col:nth-child(2) { order: 3; } /* Quick Links second last */
+  .footer-container .footer-col:nth-child(3) { order: 2; } /* Products second */
+  
+  
+
 .bfooter{
-     grid-template-columns: 1fr 1fr 1fr  1fr !important;
+     grid-template-columns: 1fr 1fr 1fr ;
 }
 .footer-col {
     min-width: 250px;
@@ -1811,6 +1847,13 @@ ol, ul {
     /* background: linear-gradient(rgb(65 153 171 / 70%), rgba(0, 0, 0, 0.7)); */
     padding: 60px 45px;
 }
+.info_footer{
+     grid-template-columns: 1.7fr  1fr ;
+     
+}
+.bfooter {
+    grid-template-columns: 236px 156px 219px 174px !important;
+}
 }
 .mobile-search{
     display: none;
@@ -1818,7 +1861,7 @@ ol, ul {
 
 /* NEW  FRON CHAT GPT  */
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
 .mnav{
     padding: 0px 10px;
 }
@@ -1872,7 +1915,7 @@ ol, ul {
  .bfooter .footer-col:nth-child(1) { order: 4; } /* JESR Al SEYOUH goes last */
   .bfooter .footer-col:nth-child(2) { order: 1; } /* Quick Links second last */
   .bfooter .footer-col:nth-child(3) { order: 2; } /* Products second */
-  .bfooter .footer-col:nth-child(4) { order: 3; } /* Contact Us first */
+  .bfooter .footer-col:nth-child(4) { order: 3; } /* Contact Us first  footer-col */
 
   .social-links {
     padding-bottom: 10px !important;
@@ -1921,6 +1964,7 @@ header-container {
 .page-hero h1{
     margin-bottom: 5px;
     margin-top: 10px;
+    font-size: 24px;
 }
 .brand-logos img{
     height: 50px;
@@ -1978,7 +2022,32 @@ header-container {
         .contact-container {
     grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
         }
+ .bfooter {
+    grid-template-columns: 1fr  !important;
+}
+}
+
+@media (min-width: 1025px) {
     
+    .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid
+;
+    grid-template-columns: 2fr 1fr ;
+    gap: 40px;
+}
+.bfooter {
+    grid-template-columns: 250px 170px 230px 200px !important;
+}
+
+
+.bfooter .footer-col:nth-child(1) { order: 1; } /* JESR Al SEYOUH goes last */
+ .bfooter .footer-col:nth-child(2) { order: 2; } /* Quick Links second last */
+  .bfooter .footer-col:nth-child(3) { order: 3; } /* Products second */
+  .bfooter .footer-col:nth-child(4) { order: 4; } /* Products second */
+  
+
 }
 
 

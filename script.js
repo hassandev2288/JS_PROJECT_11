@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         item.style.display = 'block';
                     });
                 } else {
-                    const filteredItems = Array.from(productItems).filter(item => 
+                    const filteredItems = Array.from(productItems).filter(item =>
                         item.getAttribute('data-category') === filter
                     );
                     console.log(`Showing ${filteredItems.length} items for filter: ${filter}`);
@@ -210,16 +210,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const products = {
 
- '17-HEAVY-DUTY': {
+        '17-HEAVY-DUTY': {
             name: '17” DISCOLUX POLISHING PAD',
-            image: 'Abrasives_IMAGES/17-HEAVY-DUTY.png',
+            image: 'Home_IMAGES/Home_p1.png',
             description: 'Achieve a flawless shine with the 17” Discolux Polishing Pad.Designed for smooth, streak-free finishing on all surfaces.Durable, efficient, and perfect for professional polishing results'
- ,
+            ,
             price: 'PKR 9500'
         },
         'cleaner': {
             name: '17” DISCOLUX POLISHING PAD',
-            image: 'Product_images/cleaner.jpg',
+            image: 'Home_IMAGES/Home_p1.png',
             description: 'home page ka produxtc ha Premium polishing pad for marble and granite.',
             price: 'PKR 950'
         },
@@ -287,15 +287,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 console.log('Instagram link clicked:', instagramLink.href);
                 alert('Please send us a DM on Instagram with your order details: ' + p.name);
-                window.location.href = instagramLink.href; // Force redirect
+                window.open(instagramLink.href, '_blank'); // ✅ Opens Instagram in a new tab
             });
-        } else {
+        }
+
+        else {
             console.error('Instagram link element not found');
         }
 
         // Set Gmail link
         if (gmailLink) {
-            gmailLink.href = `mailto:hassanyaseen6476@gmail.com?subject=Order for ${encodeURIComponent(p.name)}&body=${encodeURIComponent(msg)}`;
+            gmailLink.href = `mailto:jesralseyouhh@gmail.com?subject=Order for ${encodeURIComponent(p.name)}&body=${encodeURIComponent(msg)}`;
             gmailLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 console.log('Gmail link clicked:', gmailLink.href);
@@ -303,10 +305,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = gmailLink.href; // Force redirect
                 // Fallback for devices without email client
                 setTimeout(() => {
-                    alert('If your email client did not open, please email hassanyaseen6476@gmail.com with your order details: ' + p.name);
+                    alert('If your email client did not open, please email jesralseyouhh@gmail.com with your order details: ' + p.name);
                 }, 1000);
             });
-        } else {
+        }
+
+        else {
             console.error('Gmail link element not found');
         }
     } else if (productDetail) {
