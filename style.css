@@ -23,9 +23,9 @@ body {
     background-position: center;
     background-attachment: fixed;
 
-
+ overflow-x: hidden;
     color: var(--text);
-    overflow-x: hidden;
+   
     line-height: 1.6;
 }
 
@@ -1082,6 +1082,12 @@ footer {
 
 body {
     background-image: url("Body_IMAGE_com.png")  !important;
+      background-repeat: no-repeat;
+    background-size: cover;   /* Or contain, depending on fit */
+    background-position: center;
+    background-attachment: fixed;
+
+ overflow-x: hidden;
 }
 }
 /* Responsive Styles */
@@ -1124,6 +1130,12 @@ body {
 
     body {
     background-image: url("Body_IMAGE_com.png") ;
+      background-repeat: no-repeat;
+    background-size: cover;   /* Or contain, depending on fit */
+    background-position: center;
+    background-attachment: fixed;
+
+ overflow-x: hidden;
     }
     .desktop-nav {
         display: none;
@@ -1196,6 +1208,12 @@ body {
 
      body {
     background-image: url("Body_IMAGE_com.png") !important ;
+      background-repeat: no-repeat;
+    background-size: cover;   /* Or contain, depending on fit */
+    background-position: center;
+    background-attachment: fixed;
+
+ overflow-x: hidden;
     }
 
     /* .menue{
