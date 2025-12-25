@@ -219,13 +219,13 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         'global': {
             name: 'GLOBAL MASTIC 28kG',
-            image: 'Home_IMAGES/Global.png',
+            image: 'Home_IMAGES/Global mastic full.png',
             description: 'Premium 28kg mastic adhesive for superior stone and marble bonding.',
             price: 'UAE --'
         },
         'glue': {
             name: 'SOLID CREAM EMARATI',
-            image: 'Home_IMAGES/Home_p2.png',
+            image: 'Home_IMAGES/Emarati_full.png',
             description: 'High-strength adhesive for quick and durable marble installation.',
             price: 'UAE --'
         },
