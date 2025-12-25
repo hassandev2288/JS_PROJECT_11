@@ -211,23 +211,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const products = {
 
         '17-HEAVY-DUTY': {
-            name: '17” DISCOLUX POLISHING PAD',
-            image: 'Home_IMAGES/Home_p1.png',
+            name: 'SOLID CREAM EMARATI',
+            image: 'Home_IMAGES/Home_p2.png',
             description: 'Achieve a flawless shine with the 17” Discolux Polishing Pad.Designed for smooth, streak-free finishing on all surfaces.Durable, efficient, and perfect for professional polishing results'
             ,
             price: 'PKR 9500'
         },
-        'cleaner': {
-            name: '17” DISCOLUX POLISHING PAD',
-            image: 'Home_IMAGES/Home_p1.png',
-            description: 'home page ka produxtc ha Premium polishing pad for marble and granite.',
-            price: 'PKR 950'
+        'global': {
+            name: 'GLOBAL MASTIC 28kG',
+            image: 'Home_IMAGES/Global.png',
+            description: 'Premium 28kg mastic adhesive for superior stone and marble bonding.',
+            price: 'UAE --'
         },
         'glue': {
-            name: 'Marble Glue Fast Dry',
-            image: 'Product_images/Anti_slip.jpg',
-            description: 'Fast-drying marble glue for stone fixing.',
-            price: 'PKR 580'
+            name: 'SOLID CREAM EMARATI',
+            image: 'Home_IMAGES/Home_p2.png',
+            description: 'High-strength adhesive for quick and durable marble installation.',
+            price: 'UAE --'
         },
         'cutter': {
             name: 'Professional Cutting Disc',
