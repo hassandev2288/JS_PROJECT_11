@@ -1085,8 +1085,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: scroll; /* ✅ changed from fixed to scroll */
-    min-height: 100vh; /* ensures full height */
+    background-attachment: scroll !important;
+    min-height: 100vh !important; 
     overflow-x: hidden;
 }
 }
