@@ -1930,6 +1930,10 @@ ol, ul {
     
     margin: 0px  15px !important;
 }
+.brand-image img {
+    height: 332px;
+    width: 250px;
+}
 
 .bfooter {
     grid-template-columns: 1fr !important;
