@@ -1812,8 +1812,9 @@ width: 100%;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(8.2px);
 -webkit-backdrop-filter: blur(8.2px);
-
-   background-color: #0d191e;
+/* 
+   background-color: #0d191e; */
+       background: linear-gradient(rgb(110 24 24 / 70%), #0a282e);
    
  /* background: linear-gradient(rgb(229 209 209 / 70%),rgba(24, 44, 46, 0.7)); */
      
@@ -1827,7 +1828,7 @@ backdrop-filter: blur(8.2px);
 }
 
 .as-product-img {
-    max-height: 235px;
+    max-height: 270px;
     object-fit: contain;
 }
 

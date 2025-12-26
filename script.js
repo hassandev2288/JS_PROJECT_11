@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Set WhatsApp link
         if (whatsappLink) {
-            whatsappLink.href = `https://wa.me/+923042862288?text=${encodeURIComponent(msg)}`;
+            whatsappLink.href = `https://wa.me/+971527318585?text=${encodeURIComponent(msg)}`;
             whatsappLink.addEventListener('click', (e) => {
                 e.preventDefault();
                 console.log('WhatsApp link clicked:', whatsappLink.href);
