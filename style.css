@@ -1777,7 +1777,10 @@ width: 100%;
    padding-top: 10px;
    
 }
-
+.brand-image img{
+    height: 390px;
+    width: 360px;
+}
 
 .P_heading{
     color: white !important;
@@ -1828,7 +1831,7 @@ backdrop-filter: blur(8.2px);
 }
 
 .as-product-img {
-    max-height: 270px;
+    max-height: 320px;
     object-fit: contain;
 }
 

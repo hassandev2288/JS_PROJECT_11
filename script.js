@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         'global': {
             name: 'GLOBAL MASTIC 28kG',
-            image: 'Home_IMAGES/Global mastic full.png',
+            image: 'Home_IMAGES/Global Mastic (2).png',
             description: 'Premium 28kg mastic adhesive for superior stone and marble bonding.',
             price: 'UAE --'
         },
