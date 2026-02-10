@@ -343,15 +343,34 @@ document.addEventListener('DOMContentLoaded', function () {
         setInterval(nextSlide, 4000);
         showSlide(currentSlide);
     }
-});
 
-function redirectToPage() {
+    function redirectToPage() {
     var select = document.getElementById("product-search");
     var url = select.value;
     if (url) {
         window.location.href = url; // Redirect to the selected page
     }
 }
+
+// ======================
+// CONTACT FORM SAFETY FIX (FormSubmit)
+// ======================
+const contactForm = document.querySelector('form[action*="formsubmit.co"]');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function () {
+        // Prevent double submit bugs
+        const btn = contactForm.querySelector('button[type="submit"]');
+        if (btn) {
+            btn.disabled = true;
+            btn.innerText = 'Sending...';
+        }
+    });
+}
+
+});
+
+
 
 
 
