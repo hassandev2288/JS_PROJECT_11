@@ -17,7 +17,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap');
 
 body {
-    background-image: url("Body_IMAGE.png") ;
+    /* background-image: url("Body_IMAGE.png") ; */
+    background-color: #000000;
+    /* background-color: #182C2E; */
     background-repeat: no-repeat;
     background-size: cover;   /* Or contain, depending on fit */
     background-position: center;
