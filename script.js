@@ -370,6 +370,23 @@ if (contactForm) {
 
 });
 
+// FAQ Toggle
+const faqs = document.querySelectorAll('.faq-question');
+
+faqs.forEach(faq => {
+    faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+        const answer = faq.nextElementSibling;
+
+        if(faq.classList.contains('active')) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            answer.style.padding = "15px 20px";
+        } else {
+            answer.style.maxHeight = null;
+            answer.style.padding = "0 20px";
+        }
+    });
+});
 
 
 
