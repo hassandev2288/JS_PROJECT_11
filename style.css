@@ -1802,6 +1802,7 @@ width: 100%;
 .as-products-section {
     color: white;
    /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgb(65 153 171 / 70%)); */
+   padding-top:190px !important;
 }
 
 .as-products-title {

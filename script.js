@@ -240,7 +240,50 @@ document.addEventListener('DOMContentLoaded', function () {
             image: 'Product_images/tape.jpg',
             description: 'Strong adhesive double-sided tape.',
             price: 'PKR 320'
-        }
+        },
+        'Porcelaincutblade4.5': {
+        name: 'Porcelain Cutblade 4.5 Emarat',
+        image: 'Cutting_Blade/Porcelain_cutblade.png',
+        description: 'Premium porcelain cutting blade designed for smooth and precise tile cutting.',
+        price: 'PKR --'
+    },
+
+    'Ceramicandmarblecutting4.5': {
+        name: 'Ceramic and Marble Cutting 4.5 JAS',
+        image: 'Cutting_Blade/Ceramic and marble cutting.png',
+        description: 'High-performance blade ideal for ceramic and marble cutting applications.',
+        price: 'PKR --'
+    },
+
+    'Zerocuttingblade4.5': {
+        name: 'Zero Cutting Blade 4.5 JAS',
+        image: 'Cutting_Blade/Zero_cutting_blade_4.5_jas.png',
+        description: 'Durable zero-vibration cutting blade for accurate and clean results.',
+        price: 'PKR --'
+    },
+
+    'Porcelaincuttingblade350mm': {
+        name: 'Porcelain Cutting Blade 350mm JAS',
+        image: 'Cutting_Blade/Porcelain_cutting_blade.png',
+        description: 'Large-size porcelain blade suitable for heavy-duty industrial cutting.',
+        price: 'PKR --'
+    },
+
+    'Granitecuttingbalde35mm': {
+        name: 'Granite Cutting Blade 35mm JAS',
+        image: 'Cutting_Blade/Granite_cutting.png',
+        description: 'Strong granite cutting blade built for powerful and efficient performance.',
+        price: 'PKR --'
+    },
+
+    'Marblecuttingbladesilent': {
+        name: 'Marble Cutting Blade Silent 350mm JAS',
+        image: 'Cutting_Blade/Marble_cutting_blade_silent.png',
+        description: 'Silent marble cutting blade engineered for smooth and low-noise operation.',
+        price: 'PKR --'
+    }
+
+
     };
 
     const whatsappLink = document.getElementById('whatsapp-link');
