@@ -1863,6 +1863,7 @@ backdrop-filter: blur(8.2px);
 .as-product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 20px rgb(250, 248, 248);
+     border: 2px solid  rgb(255, 230, 9);!important;
 }
 
 .as-product-img {
