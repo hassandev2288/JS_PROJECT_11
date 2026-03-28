@@ -16,18 +16,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap');
 
 body {
-    background-image: url("Home_IMAGES/Gemini_Generated_Image_h3ig7mh3ig7mh3ig.png") ;
+    /* background-image: url("Home_IMAGES/Gemini_Generated_Image_h3ig7mh3ig7mh3ig.png") ; */
    
     /* background-color: #182C2E; */
     background-repeat: no-repeat;
     background-size: cover;   /* Or contain, depending on fit */
     background-position: center;
     background-attachment: fixed;
+    background: 
+    linear-gradient(rgba(24, 44, 46, 0.75), rgba(0, 0, 0, 0.85)),
+    url('Home_IMAGES/FPCOT.jpg') center/cover no-repeat fixed;
+  background-blend-mode: multiply;
 
  overflow-x: hidden;
     color: var(--text);
    
     line-height: 1.6;
+}
+
+.cursor-light {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(0,255,200,0.15), transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+   transition: all 0.1s ease;
 }
 
 h1,
@@ -1848,6 +1864,10 @@ backdrop-filter: blur(8.2px);
     
     border-radius: 8px;
     height: 100%;
+    background:
+    linear-gradient(145deg, #dee2e6, rgb(6 11 12 / 20%));
+
+    /* background: linear-gradient(145deg, #dee2e6, rgb(102 161 163 / 20%)); */
     
     /* Premium Glassmorphism Effect */
     backdrop-filter: blur(8.2px);
@@ -1858,7 +1878,7 @@ backdrop-filter: blur(8.2px);
 
     /* background: linear-gradient(145deg, #dee2e6, rgb(102 161 163 / 20%));  */
        /* rgba(24, 44, 46, 0.6); */
-    background: linear-gradient(rgba(24, 44, 46, 0.6) ,145deg, #dee2e6); 
+    /* background: linear-gradient(rgba(24, 44, 46, 0.6) ,145deg, #dee2e6);  */
     
     /* 2. Border Color: Subtle Steel Grey */
     border: 1px solid rgba(255, 255, 255, 0.1);

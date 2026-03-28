@@ -29,6 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
         if (mnav) mnav.style.display = 'none';
     }
 
+
+
+  
+const light = document.querySelector('.cursor-light');
+
+document.addEventListener('mousemove', (e) => {
+  light.style.left = e.clientX + 'px';
+  light.style.top = e.clientY + 'px';
+});
+
+
     function closeMenu() {
         if (!mobileMenu || !overlay) return;
         mobileMenu.classList.remove('active');
